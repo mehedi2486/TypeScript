@@ -1,38 +1,30 @@
-interface People {
+// Type 
+
+type Employee = {
     name:string,
-    age:number,
-    // greet: (gender:string) => string,
-
-    // greet2():string
+    startDate:string
 }
 
-const person:People = {
+type Manager = {
+    name : string,
+    department:string
+}
+
+
+type TeamLead = Employee & Manager;
+
+let e:Employee = {
     name:"mehedi",
-    age:34,
-    // greet: (gender) => {
-    //     return `hello ${gender}`
-    // }
+    startDate:"2-3-2000"
 }
 
-
-class Manager implements People {
-    name:string;
-    age:number;
-
-    constructor(name:string, age:number){  //when we chreate an object we need to pass this 2 argument here as input
-        
-        this.name = name,
-        this.age = age
-    }
-
-
+let m:Manager = {
+    name:"hasan",
+    department:"potato"
 }
 
-
-const user = new Manager("mehedi", 34)
-
-console.log(user.name)
-
-
-
-
+let t:TeamLead = {
+    name:"mehedi",
+    startDate:"2-3-2000",
+    department:"potato"
+}

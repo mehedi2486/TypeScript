@@ -1,30 +1,53 @@
 // Type 
 
-type Employee = {
-    name:string,
-    startDate:string
+// interface Admin{
+//     name:string,
+//     permissions:string
+
+// }
+
+// interface User {
+//     name: string,
+//     age: number
+// }
+
+// type UserOrAdmin = Admin | User;
+
+// function greet(user:UserOrAdmin){
+//     console.log(user.name)
+
+// }
+
+interface User {
+    firstName:string,
+    lastName: string,
+    age: number
 }
 
-type Manager = {
-    name : string,
-    department:string
+function findUsers(users: User[]){
+    return users.filter((u) => u.age > 18)
+
 }
 
+// function filterUser (users: User[]){
+//     let ans:User[] = [];
 
-type TeamLead = Employee & Manager;
+//     for(let i=0; i< users.length; i++){
+//         if(users[i].age > 18){
+//             ans.push(users[i])
+//         }
+//     }
+//     return ans
+// }
 
-let e:Employee = {
-    name:"mehedi",
-    startDate:"2-3-2000"
+console.log(findUsers ([{
+    firstName:"mehedi",
+    lastName:"hasan",
+    age:21
+},{
+    firstName:"raju",
+    lastName:"mollik",
+    age:12
 }
+]))
 
-let m:Manager = {
-    name:"hasan",
-    department:"potato"
-}
-
-let t:TeamLead = {
-    name:"mehedi",
-    startDate:"2-3-2000",
-    department:"potato"
-}

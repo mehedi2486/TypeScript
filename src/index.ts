@@ -1,45 +1,38 @@
-interface Address {
-  city: string;
-  country: string;
-  pincode: number;
+interface People {
+    name:string,
+    age:number,
+    // greet: (gender:string) => string,
+
+    // greet2():string
 }
 
-interface User {
-  name: string;
-  age: number;
-  address:Address
-    
-  
-}
-
-interface officeUser {
-  address:Address 
-   
+const person:People = {
+    name:"mehedi",
+    age:34,
+    // greet: (gender) => {
+    //     return `hello ${gender}`
+    // }
 }
 
 
-let user: User = {
-  name: "mehedi",
-  age: 5,
-  address: {
-    city: "dhaka",
-    country: "Bangladesh",
-    pincode: 34554,
-  },
-};
+class Manager implements People {
+    name:string;
+    age:number;
 
-function isLegal(user: User): boolean {
-  if (user.age > 18) {
-    return true;
-  } else {
-    return false;
-  }
+    constructor(name:string, age:number){  //when we chreate an object we need to pass this 2 argument here as input
+        
+        this.name = name,
+        this.age = age
+    }
+
+
 }
 
-const ans = isLegal(user);
 
-if (ans) {
-  console.log("I am legal");
-} else {
-  console.log("I am not legal to vote");
-}
+const user = new Manager("mehedi", 34)
+
+console.log(user.name)
+
+
+
+

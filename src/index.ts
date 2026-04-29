@@ -1,8 +1,15 @@
-//Record user for cleaner object declaration
+//Map key - value pair
 
-type Users = Record<string, {name:string, age:number}>;
-
-const users:Users = {
-   "raju" : {name:"naim",age:23},
-   "naim" : {name:"nahid", age:55}
+type User = {
+    name:string;
+    age:number,
+    email:string
 }
+
+const users = new Map<string, User>();
+users.set("raju", {name:"raj", age:22, email:"yeo@gmail.com"})
+users.set("raju", {name:"raj", age:22, email:"yeo@gmail.com"})
+
+
+users.get("raju")
+console.log(users)

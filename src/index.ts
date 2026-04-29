@@ -1,53 +1,29 @@
-// Type 
-
-// interface Admin{
-//     name:string,
-//     permissions:string
-
-// }
-
-// interface User {
-//     name: string,
-//     age: number
-// }
-
-// type UserOrAdmin = Admin | User;
-
-// function greet(user:UserOrAdmin){
-//     console.log(user.name)
-
-// }
-
 interface User {
-    firstName:string,
-    lastName: string,
-    age: number
+    id:string,
+    name:string,
+    age:number,
+    email:string,
+    password:string
 }
 
-function findUsers(users: User[]){
-    return users.filter((u) => u.age > 18)
+//select subset of the interface
+type UpdateProps = Pick<User, 'name' | 'age' | 'email'>
 
-}
+//makes all existing properties optional
+type updatePropsOptional = Partial<UpdateProps>
 
-// function filterUser (users: User[]){
-//     let ans:User[] = [];
+ function UpdateUser (updatedProps: updatePropsOptional){
+    
+ }
 
-//     for(let i=0; i< users.length; i++){
-//         if(users[i].age > 18){
-//             ans.push(users[i])
-//         }
-//     }
-//     return ans
-// }
+ UpdateUser({
+    name:"mehedi",
+    age:34,
+   
 
-console.log(findUsers ([{
-    firstName:"mehedi",
-    lastName:"hasan",
-    age:21
-},{
-    firstName:"raju",
-    lastName:"mollik",
-    age:12
-}
-]))
+ })
 
+
+ function updateOptional (updateOptional:updatePropsOptional){
+    name:"hi@gamil.com"
+ }    
